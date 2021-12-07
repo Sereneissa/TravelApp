@@ -1,8 +1,8 @@
 const pixabyURL = 'https://pixabay.com/api/?key=${pixabyAPI}&q=${image}';
-const pixabyAPI = '24691018-39a9bd1f1f4754219a0859773'
+const pixabyKEY = 'process.env.REACT_pixabyAPI';
 
 async function getPixabyImage(key, image) {
-    const getPixaby = pixabyURL + pixabyAPI;
+    const getPixaby = pixabyURL + pixabyKEY;
     try{
         const response = await fetch(getPixaby) 
         if (response.ok) {

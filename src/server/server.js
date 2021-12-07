@@ -20,6 +20,13 @@ console.log(__dirname)
 
 console.log(process.env);
 
+
+let projectData = []
+const pixabyKEY = process.env.REACT_pixabyAPI;
+const weatherbitKEY = process.env.REACT_weatherAPIKey;
+const geonameKEY = process.env.REACT_geonameUsername;
+
+
 //Get route
 app.get('/', function (req, res) {
     res.sendFile('dist/index.html')
@@ -32,11 +39,6 @@ app.get('/test', function (req, res) {
     res.send(mockAPIResponse)
 })
 
-
-let projectData = []
-const pixabyKEY = process.env.REACT_pixabyAPI;
-const weatherbitKEY = process.env.REACT_weatherAPIKey;
-const geonameKEY = process.env.REACT_geonameUsername;
 
 
 //API  Keys 
