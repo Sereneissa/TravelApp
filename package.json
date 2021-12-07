@@ -8,6 +8,9 @@
     "build-prod": "webpack --config webpack.prod.js",
     "build-dev": "webpack-dev-server  --config webpack.dev.js --open"
   },
+  "transform": {
+    "\\.js$": "<rootDir>/node_modules/babel-jest"
+  },
   "keywords": [],
   "author": "",
   "license": "ISC",
@@ -37,7 +40,7 @@
     "css-loader": "^6.5.1",
     "dotenv": "^10.0.0",
     "html-webpack-plugin": "^5.5.0",
-    "jest": "^27.3.1",
+    "jest": "^27.4.3",
     "loader": "^2.1.1",
     "mini-css-extract-plugin": "^2.4.5",
     "optimize-css-assets-webpack-plugin": "^6.0.1",
