@@ -5,12 +5,10 @@ async function getPixabyImage(key, image) {
     const getPixaby = pixabyURL + pixabyKEY;
     try{
         const response = await fetch(getPixaby) 
-        if (response.ok) {
-            const data = await response.json();
-            console.log(data);
-            return data;
-
-        }
+        const data = await response.json();
+        console.log(data);
+        return data;
+        
     } catch (error) {
         console.log(error);
     }

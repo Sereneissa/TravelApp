@@ -3,17 +3,17 @@ const updateUI = async () => {
         let response = await fetch( tripPlan + "/addAPI");
         let data = await response.json();
 
-        document.querySelector('#results').innerHTML = "";
+        document.querySelector('#myResults').innerHTML = "";
 
         await data.map((myTrip) => {
-            document.querySelector('#results').innerHTML+=`
+            document.querySelector('#myResults').innerHTML+=`
             <div class = "myTrip">
                 <div class = "photo">
                     <img src= "${myTrip.image}"/>
                 </div>
                 
                 <div class = "information">
-                        City: 
+                    City: 
                     <p class = "name">$(myTrip.name)</p>
                     <br/> 
                     <br/>

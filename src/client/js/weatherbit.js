@@ -9,13 +9,12 @@ async function getWeatherData(longitude, latitude) {
             headers: { "Content-Type": "application/json" },
             body: JSON.stringify({ weatherBit: weatherBit })
       });
-        
-        if (response.ok) {
+
             const data = await response.json();
             console.log(data);
             return data;
 
-        }
+    
     } catch (error) {
         console.log(error);
     }

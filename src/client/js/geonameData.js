@@ -5,18 +5,16 @@ async function getGeonameData(destination) {
     const geonameData = geonameDataURL + geonameKEY;
     try{
         const response = await fetch(geonameData);
-        if (response.ok) {
             const destination = {} 
             const data = await response.json();
            
-            location.latitude = data.geonames[0].lat;
-            location.longitude = data.geonames[0].lng;
-            location.countryCode = data.geonames[0].countryCode;
+            destination.latitude = data.geonames[0].lat;
+            destination.longitude = data.geonames[0].lng;
            
             console.log(destination);
             return destination;
 
-        }
+        
     } catch (error) {
         console.log(error);
     }
