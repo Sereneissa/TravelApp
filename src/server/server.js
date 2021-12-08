@@ -55,8 +55,6 @@ app.post('/addAPI', (req,res) =>{
             return;
         }
     
-app.post('/addAPI', (req,res) =>{
-
     const weatherBitURL = `https://api.weatherbit.io/v2.0/forecast/daily?&lat=&key=${weatherAPIKey}`;
     
         fetch (weatherBitURL)
@@ -64,8 +62,6 @@ app.post('/addAPI', (req,res) =>{
         .then (weatherData => {
 
             
-app.post('/addAPI', (req,res) =>{
-
         const pixabyURL = `https://pixabay.com/api/?key=${pixabyAPI}&q=${image}`;
 
         fetch (pixabyURL)
@@ -86,10 +82,10 @@ dotenv.config();
 
 
 // designates what port the app will listen to for incoming requests
-app.listen(8081, function () {
-    console.log('Example app listening on port 8081!')
+const port = 8081;
+app.listen(port, function () {
+    console.log('Listening on port 8081!')
     })
 
-    })
 
-})
+

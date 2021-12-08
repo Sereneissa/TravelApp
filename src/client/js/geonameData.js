@@ -5,6 +5,7 @@ async function getGeonameData(destination) {
     const geonameData = geonameDataURL + geonameUsername;
     try{
         const response = await fetch(geonameData);
+        if (response.ok) {
             const destination = {} 
             const data = await response.json();
            
@@ -13,7 +14,7 @@ async function getGeonameData(destination) {
            
             console.log(destination);
             return destination;
-
+        }
         
     } catch (error) {
         console.log(error);

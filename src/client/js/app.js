@@ -44,6 +44,7 @@ let tripPlan = async () => {
       return res.json
   })
 })
+    
 .then (data => {
 
 
