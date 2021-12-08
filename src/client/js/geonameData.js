@@ -1,8 +1,8 @@
 const geonameDataURL = 'api.geonames.org/searchJSON?location&username=serene.issa&style=full'
-const geonameKEY = 'process.env.REACT_geonameUsername';
+const geonameUsername = 'serene.issa'
 
 async function getGeonameData(destination) {
-    const geonameData = geonameDataURL + geonameKEY;
+    const geonameData = geonameDataURL + geonameUsername;
     try{
         const response = await fetch(geonameData);
             const destination = {} 

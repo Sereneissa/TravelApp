@@ -22,9 +22,10 @@ console.log(process.env);
 
 
 let projectData = []
-const pixabyKEY = process.env.REACT_pixabyAPI;
-const weatherbitKEY = process.env.REACT_weatherAPIKey;
-const geonameKEY = process.env.REACT_geonameUsername;
+
+const geonameUsername = 'serene.issa'
+const weatherAPIKey = '29b82de2b01f4bba9f0620befefa4193'
+const pixabyAPI = '24691018-39a9bd1f1f4754219a0859773'
 
 
 //Get route
@@ -45,7 +46,7 @@ app.get('/test', function (req, res) {
 
 
 app.post('/addAPI', (req,res) =>{
-    const geonameDataURL = (`api.geonames.org/searchJSON?location&username${geonameKEY}`);
+    const geonameDataURL = (`api.geonames.org/searchJSON?location&username${geonameUsername}`);
     fetch (geonameDataURL)
     .then (res = res.json())
     .then(geonameData => {
@@ -56,7 +57,7 @@ app.post('/addAPI', (req,res) =>{
     
 app.post('/addAPI', (req,res) =>{
 
-    const weatherBitURL = `https://api.weatherbit.io/v2.0/forecast/daily?&lat=&key=${weatherbitKEY}`;
+    const weatherBitURL = `https://api.weatherbit.io/v2.0/forecast/daily?&lat=&key=${weatherAPIKey}`;
     
         fetch (weatherBitURL)
         .then (res => res.json())
@@ -65,7 +66,7 @@ app.post('/addAPI', (req,res) =>{
             
 app.post('/addAPI', (req,res) =>{
 
-        const pixabyURL = `https://pixabay.com/api/?key=${pixabyKEY}&q=${image}`;
+        const pixabyURL = `https://pixabay.com/api/?key=${pixabyAPI}&q=${image}`;
 
         fetch (pixabyURL)
         .then (res => res.json())
