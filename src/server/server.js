@@ -5,8 +5,6 @@ const mockAPIResponse = require('./mockAPI.js')
 const bodyParser = require('body-parser')
 const cors = require('cors');
 const axios = require('axios').default;
-const regeneratorRuntime = require("regenerator-runtime");
-
 
 
 const app = express()
@@ -31,7 +29,7 @@ const pixabyAPI = '24691018-39a9bd1f1f4754219a0859773'
 
 
 //Get route
-app.get('/', function (req, res) {
+app.get('/addTrip', function (req, res) {
     res.sendFile('dist/index.html')
     res.send(projectData);
   })
@@ -47,7 +45,7 @@ app.get('/test', function (req, res) {
 //API  Keys 
 
 
-app.post('/addAPI', (req,res) =>{
+app.post('/addTrip', (req,res) =>{
     const geonameDataURL = (`api.geonames.org/searchJSON?location&username${geonameUsername}`);
     fetch (geonameDataURL)
     .then (res = res.json())

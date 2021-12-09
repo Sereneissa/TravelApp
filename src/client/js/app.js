@@ -1,4 +1,3 @@
-
 import {updateUI} from './updateUI'
 
 
@@ -58,7 +57,7 @@ let tripPlan = async () => {
      updateUI();
 
   } catch (error) {
-    document.querySelector('#results').innerText = "Please Try Again.";
+    document.querySelector('#result-box').innerText = "Please Try Again.";
     console.log(error);
   }
 

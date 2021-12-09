@@ -8,20 +8,14 @@ section {
 }
 
 
-#myResults{
-  background:rgb(232, 235, 255);
-  margin-top: 1em;
-  border-radius: 8px;
 
-}
-
-
-.myTrip {
-   background-color: royalblue;
-   border-radius: 8px;
+#result-box {
+   background-color: rgb(232, 235, 255);
+   border-radius: 10px;
     position: relative;
     display: grid;
     grid-template-rows: auto;
+    grid-template-columns: max-content;
 
 }
 
