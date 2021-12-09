@@ -5,6 +5,8 @@ const mockAPIResponse = require('./mockAPI.js')
 const bodyParser = require('body-parser')
 const cors = require('cors');
 const axios = require('axios').default;
+const regeneratorRuntime = require("regenerator-runtime");
+
 
 
 const app = express()
