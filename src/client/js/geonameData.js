@@ -1,27 +1,22 @@
-const geonameDataURL = 'api.geonames.org/searchJSON?location&username=serene.issa&style=full'
 const geonameUsername = 'serene.issa'
+import regeneratorRuntime from "regenerator-runtime";
 
-async function getGeonameData(destination) {
-    const geonameData = geonameDataURL + geonameUsername;
-    try{
-        const response = await fetch(geonameData);
-        if (response.ok) {
-            const destination = {} 
-            const data = await response.json();
-           
-            destination.latitude = data.geonames[0].lat;
-            destination.longitude = data.geonames[0].lng;
-           
-            console.log(destination);
-            return destination;
-        }
-        
-    } catch (error) {
-        console.log(error);
-    }
+const getGeonameData = async (destination) => {
+    const getGeonameRequest  = {
+         geonameDataURL: `http://api.geonames.org/searchJSON?formatted=true&q=${destination}`,
+    };
 
-}
+    const getGeonameResponse = await fetch ('/locations', {
+        method: 'POST',
+        headers: {
+            'Content-Type': 'application/json',
+        },
+        body: JSON.stringify(requestBody),
+    });
 
+    const geonameData = await getGeonameResponse.json();
+    return geonameData;
 
+};
 
-export {getGeonameData}
+export {getGeonameData};

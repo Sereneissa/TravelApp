@@ -7,22 +7,22 @@ const updateUI = async () => {
 
         await data.map((tripPlan) => {
             document.querySelector('#results').innerHTML+=`
-            <div class = "myTrip">
+            <div class = "trip">
                 <div class = "photo">
-                    <img src= "${tripPlan.image}"/>
+                    <img src= "${trip.image}"/>
                 </div>
                 
                 <div class = "information">
                     City: 
-                    <p class = "name">$(tripPlan.name)</p>
+                    <p class = "name">$(trip.name)</p>
                     <br/> 
                     <br/>
                     Start Date: 
-                    <p class = "date">$ ={tripPlan.date}</p>
+                    <p class = "date">$ ={trip.date}</p>
                     <br/> 
                     <br/>
                     Weather Forecast: 
-                    <p class="weather">${tripPlan.weather}</p>
+                    <p class="weather">${trip.weather}</p>
                     <br/> 
                     <br/>
 
