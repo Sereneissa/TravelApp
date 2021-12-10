@@ -29,7 +29,7 @@ const pixabyAPI = '24691018-39a9bd1f1f4754219a0859773'
 
 
 //Get route
-app.get('/addTrip', function (req, res) {
+app.get('/all', function (req, res) {
     res.sendFile('dist/index.html')
     res.send(projectData);
   })

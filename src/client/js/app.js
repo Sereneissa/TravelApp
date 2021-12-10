@@ -1,5 +1,6 @@
+import { getGeonameData } from './geonameData';
 import {updateUI} from './updateUI'
-
+import { getWeatherData } from './weatherbit';
 
 let tripPlan = async () => {
     console.log('DOM fully loaded');
@@ -13,7 +14,7 @@ let tripPlan = async () => {
         const startdate = document.querySelector('#start_date').value;
         const enddate = document.querySelector('#end_date').value;
 
-        if (city.length ==0) {
+       /* if (city.length ==0) {
             alert("Enter City")
             return;
 
@@ -30,36 +31,42 @@ let tripPlan = async () => {
         }
 
 
-    fetch ('http://localhost:8081/addAPI', {
-        method: 'POST',
-        credentials: 'same-origin',
-        headers: {
-        'Content-Type': 'application/json'
-    },
-        body: JSON.stringify({city}) 
-  })
+        fetch ('http://localhost:8081/addTrip', {
+            method: 'POST',
+            credentials: 'same-origin',
+            headers: {
+            'Content-Type': 'application/json'
+        },
+            body: JSON.stringify({city}) 
+        })
 
-  .then(res =>{
-      return res.json
-  })
-})
+        .then(res =>{
+            return res.json
+        })
+        })
+
     
-.then (data => {
+        .then (data => {
 
 
-  if (data.city != null) {
-      alert("Invalid City name");
-      return;
-  }
+        if (data.city != null) {
+            alert("Invalid City name");
+            return;
+    }*/ 
 
-  try {
-
-     updateUI();
+    try {
+        const data = await res.value.json();
+        console.log(data);
+        return data; 
 
   } catch (error) {
     document.querySelector('#result-box').innerText = "Please Try Again.";
     console.log(error);
   }
+  tripPlan('/addTrip')
+  .then(function(data){
+      getWeatherData('/all')
+  })
 
 })
 
